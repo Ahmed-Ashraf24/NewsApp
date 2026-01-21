@@ -5,8 +5,11 @@ import { getFavorites } from '../storage/StorageHelper'
 import { NewsListComponent } from '../components/NewsListComponent'
 import {News} from "../types/News";
 import {SafeAreaView} from "react-native-safe-area-context";
+import {NativeStackScreenProps} from "react-native-screens/native-stack";
+import {RouteStackParams} from "../types/RouteStackParm";
+type Props = NativeStackScreenProps<RouteStackParams, 'fav'>;
 
-export default function FavoritesScreen({ navigation }: any) {
+export default function FavoritesScreen({ navigation }: Props) {
     const [favorites, setFavorites] = useState<News[]>([])
 
     useFocusEffect(
